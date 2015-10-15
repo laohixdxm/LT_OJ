@@ -41,8 +41,8 @@ bool wordPattern(string pattern, string str) {
 				return false;
 		}	
 		else {
-			for(int j=0; j<pattern.length; j++)
-				if(table[j] == tokens[i])
+			for(int j=0; j<i; j++)
+				if(table[[pattern[i]]] == tokens[i])
 					return false;
 			//if(token[i] not in values)
 				//table[pattern[i]] = tokens[i];//insert	
