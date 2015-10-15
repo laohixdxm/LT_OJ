@@ -22,7 +22,8 @@ bool wordPattern(string pattern, string str) {
 	vector<string> tokens(beg, end);
 
 	cout<<pattern.length()<<tokens.size()<<endl;
-
+	if(pattern.length() != tokens.size()) 
+		return false;
 
 	for(int i=0;i<pattern.length();i++) {
 		//table[pattern[i]] = tokens[i];
