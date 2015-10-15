@@ -9,7 +9,7 @@ using namespace std;
 
 void moveZeroes(vector<int> & nums) {
 
-	int i, j =0;
+	int i=0, j =0;
 	while(nums[i]!=0) //i index zero
 			i++;
 	j = i;	
