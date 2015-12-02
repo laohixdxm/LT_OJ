@@ -3,6 +3,8 @@
 #fix bug1: binary search should be on the sorted list
 #fix bug2: s1.twoSum([0,4,3,0], 0) => [1, 1]
 
+#show bug3: s1.twoSum([1,2,5,4,3], 8) => runtime error
+
 '''
 Given an array of integers, find two numbers such that they add up to a specific target number.
 
@@ -84,7 +86,11 @@ print(res)
 res= s1.twoSum([0,4,3,0], 0)
 print(res)
 
+res = s1.twoSum([1,2,5,4,3], 8)
+print(res)
 
+res = s1.twoSum([-1,-2,-3,-4,-5], -8)
+print(res)
 
 
 
