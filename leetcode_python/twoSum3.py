@@ -9,6 +9,8 @@
 #show bug4: s1.twoSum([-1,-2,-3,-4,-5], -8) => [5, 3]
 #fix bug4: s1.twoSum([-1,-2,-3,-4,-5], -8) => [3, 5]
 
+#testcase passed: s1.twoSum([-3,4,3,90], 0) => [1,3] 
+
 
 '''
 Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -99,6 +101,9 @@ res = s1.twoSum([1,2,5,4,3], 8)
 print(res)
 
 res = s1.twoSum([-1,-2,-3,-4,-5], -8)
+print(res)
+
+res = s1.twoSum([-3,4,3,90], 0)
 print(res)
 
 
