@@ -7,6 +7,8 @@
 #fix bug3: s1.twoSum([1,2,5,4,3], 8) => [3, 5]
 
 #show bug4: s1.twoSum([-1,-2,-3,-4,-5], -8) => [5, 3]
+#fix bug4: s1.twoSum([-1,-2,-3,-4,-5], -8) => [3, 5]
+
 
 '''
 Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -76,7 +78,10 @@ class Solution(object):
 				Index2 = self.getIndex(nums, numsSorted[bSearchRet], Index1-1) + 1
 				
 				print("...", Index1, Index2)
-				return [Index1, Index2]	
+				if(Index1>Index2):
+					return [Index2, Index1]
+				else:
+					return [Index1, Index2]		
 			i+=1
 
 
