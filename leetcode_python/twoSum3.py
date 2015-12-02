@@ -1,8 +1,7 @@
 #twoSum binary search version
 
 #fix bug1: binary search should be on the sorted list
-
-
+#fix bug2: s1.twoSum([0,4,3,0], 0) => [1, 1]
 
 '''
 Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -35,8 +34,8 @@ class Solution(object):
 			return self.bSearch(nums, target, mid+1, right)
 
 
-	def getIndex(self, nums, target):
-		i = 0	
+	def getIndex(self, nums, target, start):
+		i = start
 		while(i<len(nums)):
 			if(nums[i]==target):
 				return i
@@ -58,14 +57,14 @@ class Solution(object):
 			if(bSearchRet!=None):	
 				print(numsSorted)
 				print("Sorted index=%d, index2=%d" %(i+1, bSearchRet+1))
-				Index1 = self.getIndex(nums, numsSorted[i]) + 1
+				Index1 = self.getIndex(nums, numsSorted[i], 0) + 1
 				
 #				if(numsSorted[bSearchRet]==-3):	
 #					pdb.set_trace()
-				debug = self.getIndex(nums, numsSorted[bSearchRet])
+				debug = self.getIndex(nums, numsSorted[bSearchRet], i+1)
 				print("debug", debug, numsSorted[bSearchRet])
 
-				Index2 = self.getIndex(nums, numsSorted[bSearchRet]) + 1
+				Index2 = self.getIndex(nums, numsSorted[bSearchRet], i+1) + 1
 				
 				print("...", Index1, Index2)
 				if(Index1>Index2):
