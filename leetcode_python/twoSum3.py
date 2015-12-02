@@ -4,6 +4,7 @@
 #fix bug2: s1.twoSum([0,4,3,0], 0) => [1, 1]
 
 #show bug3: s1.twoSum([1,2,5,4,3], 8) => runtime error
+#fix bug3: s1.twoSum([1,2,5,4,3], 8) => [3, 5]
 
 '''
 Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -36,11 +37,15 @@ class Solution(object):
 			return self.bSearch(nums, target, mid+1, right)
 
 
-	def getIndex(self, nums, target, start):
-		i = start
+	def getIndex(self, nums, target, pre):
+		i = 0
 		while(i<len(nums)):
 			if(nums[i]==target):
-				return i
+				if(pre!="None" and i==pre):
+					i+=1
+					continue
+				else:
+					return i	
 			i+=1
 
 
@@ -59,14 +64,14 @@ class Solution(object):
 			if(bSearchRet!=None):	
 				print(numsSorted)
 				print("Sorted index=%d, index2=%d" %(i+1, bSearchRet+1))
-				Index1 = self.getIndex(nums, numsSorted[i], 0) + 1
+				Index1 = self.getIndex(nums, numsSorted[i], "None") + 1
 				
 #				if(numsSorted[bSearchRet]==-3):	
 #					pdb.set_trace()
-				debug = self.getIndex(nums, numsSorted[bSearchRet], i+1)
+				debug = self.getIndex(nums, numsSorted[bSearchRet], Index1-1)
 				print("debug", debug, numsSorted[bSearchRet])
 
-				Index2 = self.getIndex(nums, numsSorted[bSearchRet], i+1) + 1
+				Index2 = self.getIndex(nums, numsSorted[bSearchRet], Index1-1) + 1
 				
 				print("...", Index1, Index2)
 				if(Index1>Index2):
