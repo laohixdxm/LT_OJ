@@ -1,4 +1,5 @@
 #remove duplicate linked list, list [] version
+#fix bug: s1.deleteDuplicates([1,1,2,3,3]) => [1,2]
 
 
 '''
@@ -27,9 +28,9 @@ class Solution(object):
           i = j
           break
         j+=1
-      #if(i!=j):
-      i+=1    
-      return removeDup
+      if(i!=j):
+        i+=1 
+    return removeDup
 
 s1 = Solution()
 res = s1.deleteDuplicates([1,1,2])
@@ -38,8 +39,8 @@ print("...", res)
 res = s1.deleteDuplicates([1,1,2,3,3])
 print("...", res)
 
-#res = s1.deleteDuplicates([1,1,2,3,3,4,5,5,5,6,7,7])
-#print("...", res)
+res = s1.deleteDuplicates([1,1,2,3,3,4,5,5,5,6,7,7])
+print("...", res)
 
 
 
