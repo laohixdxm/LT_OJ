@@ -1,3 +1,8 @@
+#  File "LinkedList.py", line 9, in linkedlist
+#    listOfNode[i].next = listOfNode[i+1]
+#IndexError: list index out of range
+
+
 class ListNode():
   def __init__(self, x):
     self.val = x
@@ -6,7 +11,10 @@ class ListNode():
 
 def linkedlist(listOfNode): 
   for i in range(len(listOfNode)):
-    listOfNode[i].next = listOfNode[i+1]
+    if(i+1<len(listOfNode)):
+      listOfNode[i].next = listOfNode[i+1]
+    else:
+      listOfNode[i].next = None  
   return listOfNode
 
 
