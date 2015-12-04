@@ -1,4 +1,5 @@
 #remove duplicate from linked list, linked list version, initial version
+#fix bug: Given 1->1->2->3->3, return 1->2->3->3.
 
 import pdb
 
@@ -63,7 +64,7 @@ class Solution(object):
     print(node1.val)#append node1
     while(node1!=None):
       node2=node1.next
-      #node1.next=None
+      node1.next=None
       while(node2!=None):
         if(node2.val>node1.val):
           print(node2.val)#append node2
