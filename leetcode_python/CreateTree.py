@@ -2,7 +2,10 @@
 
 #fix bug for internal node(node in internal layer)is None, add None node processing
 #        if(NodeList[i]==None):
-#            continue    
+#            continue
+
+#bfs test function could not handle internal layer None node
+#could not handle internal layer(not lowest layer) node is None
 
 class TreeNode(object):
     def __init__(self, x):
@@ -28,7 +31,7 @@ def print_node(node):
         print(node.val)
 
 
-def bfs(root):
+def bfs(root): #could not handle internal layer(not lowest layer) node is None
     fifo=[]
     fifo.append(root)
     while(len(fifo)>0):
