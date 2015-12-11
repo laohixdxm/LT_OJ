@@ -1,3 +1,10 @@
+#symmetric tree, iterative
+
+#bug record "node.left" mistaken as "node.right": 
+#if(node.left!=None): fifo.append(node.right)
+#=> if(node.right!=None): fifo.append(node.right)
+
+
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
