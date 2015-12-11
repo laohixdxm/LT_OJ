@@ -4,6 +4,11 @@
 #if(node.left!=None): fifo.append(node.right)
 #=> if(node.right!=None): fifo.append(node.right)
 
+#bug record, without None node processing after fifo.pop(0)
+#if(node==None):    continue
+
+
+
 
 class TreeNode(object):
     def __init__(self, x):
@@ -56,14 +61,14 @@ class Solution(object):
                 node = fifo.pop(0)
                 if(node==None):
                     continue
-                if(node.left!=None):
-                    fifo.append(node.left)
-                else:
-                    fifo.append(None)
-                if(node.right!=None):
-                    fifo.append(node.right)
-                else:
-                    fifo.append(None)
+                #if(node.left!=None):
+                fifo.append(node.left)
+                #else:
+                #    fifo.append(None)
+                #if(node.right!=None):
+                fifo.append(node.right)
+                #else:
+                #    fifo.append(None)
 
         return True
 
