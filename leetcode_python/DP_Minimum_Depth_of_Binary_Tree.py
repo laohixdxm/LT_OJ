@@ -1,4 +1,8 @@
 #[DP] Minimum Depth of Binary Tree, inital version
+
+#[DP] Minimum Depth of Binary Tree, inital version
+#bug: [1,2] => 1 (expected: 2)
+
 #bug: [1,2] => 1 (expected: 2)
 #fix [1,2] => 1 bug, by help function MinOfSubDepth
 
