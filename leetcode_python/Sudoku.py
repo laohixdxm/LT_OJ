@@ -10,16 +10,12 @@ def isValidSodoku(board):
             if(board[i][j]!='.'):
                 if(board[i][j] not in dist1):
                     dist1[board[i][j]] = 1
-                    if(board[i][j]==9):
-                        print([i,j], "**")
                 else:
-                    print([i,j], "*", board[i][j])
                     return False
             if(board[j][i]!='.'):
                 if(board[j][i] not in dist2):
                     dist2[board[j][i]] = 1
                 else:
-                    print([j,i])
                     return False
     #return True
 
