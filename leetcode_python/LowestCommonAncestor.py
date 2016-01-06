@@ -1,4 +1,5 @@
 #leetcode, Binary Search Tree Lowest Common Ancestor 
+#small trick for multiple () in one line 
 
 import pdb
 
@@ -58,8 +59,8 @@ node4, node5, node6, node7 = TreeNode(0), TreeNode(4), TreeNode(7), TreeNode(9)
 node10, node11 = TreeNode(3), TreeNode(5)
 
 node1.left, node1.right = node2, node3
-node2.left, node2.right = node4, node5
-node3.left, node3.right = node6, node7
+(node2.left, node2.right), (node3.left, node3.right) = (node4, node5), \
+    (node6, node7)
 node5.left, node5.right = node10, node11
 
 print(lowestCommonAncestor(node1, node2, node3).val)
