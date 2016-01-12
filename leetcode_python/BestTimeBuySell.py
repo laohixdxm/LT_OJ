@@ -1,4 +1,5 @@
-#leetcode, BestTimeBuySell, initial version, "list index out of range" bug
+#leetcode, BestTimeBuySell, initial version, has bug
+#fix bug, list out of range
 
 import pdb
 
@@ -19,7 +20,7 @@ def maxProfit(prices):
     diff = 0
     max_arr = [None]*len(prices)
 
-    for i in range(len(prices)):
+    for i in range(len(prices)-1):
         buy = prices[i]
         sell = max_price(prices, i+1, len(prices)-1, max_arr)
         cur_diff = sell - buy
