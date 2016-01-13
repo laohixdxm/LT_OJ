@@ -1,4 +1,5 @@
 #leetcode, Single Number problem
+#fix bug: double assignment
 #related, python/xor.py
 
 
@@ -17,7 +18,8 @@ nums2 = [0]*11
 print(nums2)
 for i in range(0, len(nums2)-1, 2):
     tmp = randrange(100), 
-    nums2[i], nums2[i+1] = tmp, tmp
+    nums2[i] = tmp 
+    nums2[i+1] = tmp
 
 nums2[len(nums2)-1] = randrange(101, 200,1)
 print(nums2)
